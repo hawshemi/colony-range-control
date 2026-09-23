@@ -22,4 +22,4 @@ Larger heater and scrubber ranges still use more power. The mod warns about poss
 
 In a loaded colony, turn off **Enable range changes** and apply. Save, disable the mod, and restart. Existing safari routes remain unchanged.
 
-For game version 1.1.0.403908. [MIT license](LICENSE).
+Tested on game version 1.1.0.403908. [MIT license](LICENSE).
