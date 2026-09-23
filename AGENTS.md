@@ -33,7 +33,7 @@ Set `GAME_SOURCE` locally to the game source directory. Use the first test for r
 - Keep personal filesystem paths out of tracked files, examples, and commit messages. Use environment variables or generic placeholders.
 - When asked to install locally, back up the existing mod first. Preserve installed publishing fields, including `pdx_id` and `pdx_version`, and avoid duplicate installations. Close the editor without saving and reopen it after external edits to prevent stale data from overwriting them.
 - Preserve the existing Paradox listing ID `160315` when preparing updates. Keep the GitHub URL in `external_links` without repeating it in the description.
-- Use a 1280 × 720 JPG thumbnail at about 90% quality, below 2 MiB. The marketplace crops images to 16:9. Keep text inside safe margins and synchronize the root and packaged thumbnails.
+- Use a 1280 × 720 JPG thumbnail at about 90% quality, below 2 MiB. The marketplace crops images to 16:9. Keep text inside safe margins. Use `mod/preview.jpg` for both the mod and README.
 - Publish to Paradox Mods only when explicitly requested. A source zip is not the game's packed upload archive.
 
 ## Git and communication

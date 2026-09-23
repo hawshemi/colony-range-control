@@ -1,6 +1,6 @@
 # Colony Range Control
 
-![Colony Range Control preview](preview.jpg)
+![Colony Range Control preview](mod/preview.jpg)
 
 Adjust 17 colony ranges from 1x to 10x in **Surviving Mars: Relaunched**. By hawshemi.
 
