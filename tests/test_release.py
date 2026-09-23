@@ -32,6 +32,13 @@ image_path = root/metadata['image'].removeprefix('Mod/LocalRangeExtender/')
 assert image_path.stat().st_size < 2*1024*1024
 with Image.open(image_path) as image:
     image.verify()
+for index in range(1, 6):
+    relative = metadata[f'screenshot{index}']
+    if relative:
+        screenshot = root/relative.removeprefix('Mod/LocalRangeExtender/')
+        assert screenshot.stat().st_size < 2*1024*1024
+        with Image.open(screenshot) as image:
+            image.verify()
 for _, relative in metadata['code'].items():
     assert (root/relative).is_file()
 options = l.execute((root/'items.lua').read_text(encoding='utf-8'))
