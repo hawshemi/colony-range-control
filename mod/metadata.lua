@@ -16,7 +16,10 @@ To remove, turn off Enable range changes in a loaded colony and apply. Save, dis
 For Surviving Mars: Relaunched 1.1.0.403908.
 Author: hawshemi
 License: MIT
+
+GitHub: https://github.com/hawshemi/colony-range-control
 ]=],
+    'external_links', { "https://github.com/hawshemi/colony-range-control" },
     'image', "Mod/LocalRangeExtender/preview.png",
     'id', "LocalRangeExtender",
     'author', "hawshemi",
