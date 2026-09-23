@@ -4,20 +4,22 @@
 
 Adjust 17 colony ranges from 1x to 10x in **Surviving Mars: Relaunched**. By hawshemi.
 
-Covers domes, stations, drones, scrubbers, heaters, lasers, extractors, sensors, Artificial Suns, support struts, safaris, forestation, Moholes, and Advanced Stirling Generators.
+## Install
 
-## Install and use
+Get it on [Paradox Mods](https://mods.paradoxplaza.com/mods/160315/Any), enable it, and restart the game. Disable other mods that change the same ranges.
 
-Copy the contents of [mod](mod) into your local mod folder. Enable the mod, restart the game, and load your colony. Disable other mods that change the same ranges.
+For manual installation, copy the contents of [mod](mod) into your local mod folder.
 
-Open **Mod Options** and choose 2x, 5x, 10x, or Custom. The default preset is 2x. Custom keeps your individual settings, with every multiplier defaulting to 2x. Apply to update your colony and see a range report, such as **35 → 70 hexes**.
+## Options
 
-The mod also warns about possible conflicts with other loaded range mods. Larger heater and scrubber ranges still use more power.
+Choose **2x** (default), **5x**, **10x**, or **Custom** in Mod Options. Custom lets you adjust each range from 1x to 10x. Apply to update your colony and view the range report.
+
+<img src="mod/options.png" alt="Mod options showing the 2x preset and individual range sliders" width="600">
+
+Larger heater and scrubber ranges still use more power. The mod warns about possible conflicts with other range mods.
 
 ## Remove
 
 In a loaded colony, turn off **Enable range changes** and apply. Save, disable the mod, and restart. Existing safari routes remain unchanged.
 
-For Surviving Mars: Relaunched 1.1.0.403908.
-
-Licensed under the [MIT license](LICENSE).
+For game version 1.1.0.403908. [MIT license](LICENSE).
