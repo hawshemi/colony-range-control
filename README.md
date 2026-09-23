@@ -1,63 +1,23 @@
 # Colony Range Control
 
-Give your colony more room to work.
+Adjust 17 colony ranges from 1x to 10x in **Surviving Mars: Relaunched**. By hawshemi.
 
-Colony Range Control adds 17 independent range settings to Surviving Mars: Relaunched. Choose a multiplier from 1x to 10x for each setting. Use 1x for normal range or turn off the master switch to restore the normal ranges while the mod is loaded.
+Covers domes, stations, drones, scrubbers, heaters, lasers, extractors, sensors, Artificial Suns, support struts, safaris, forestation, Moholes, and Advanced Stirling Generators.
 
-Range settings
-- Domes and train stations
-- Drone Hubs
-- RC Commanders and their drone-controlling variants
-- Rocket drone service areas
-- Drone Hub Extenders
-- Triboelectric Scrubbers
-- Subsurface Heaters
-- MDS Laser protection and shooting distances
-- Extractor reach to compatible underground deposits
-- Sensor Tower scanning-boost distance
-- Artificial Sun illumination and associated heat
-- Underground Support Strut work radius
-- RC Safari attraction detection
-- RC Safari maximum route length
-- Forestation Plant planting radius
-- Mohole heat radius
-- Advanced Stirling Generator heat radius
+## Install and use
 
-Defaults
-The default preset is Custom, preserving existing individual settings. Normal, 2x and 5x override all 17 multipliers without erasing custom values. Switch back to Custom to restore them. Domes use 10x. All other settings use 2x. Open this mod's options to choose your own values. Apply the options in a loaded colony to update existing buildings and vehicles. New units receive the configured ranges after initialization. The mod tracks applied multipliers so repeated loads do not multiply them again.
+Copy the contents of [mod](mod) into your local mod folder. Enable the mod, restart the game, and load your colony. Disable other mods that change the same ranges.
 
-Range report
-Applying Mod Options opens a report with actual ranges found in the colony, such as 35 → 70 hexes for a default Drone Hub at 2x. Normal-equivalent values account for the applied multiplier and current building slider. Distances use hexes or meters according to the game calculation. Buildings absent from the colony are omitted. Heat, sensor and route constants are always listed.
+Open **Mod Options** and choose Normal, 2x, 5x, or Custom. Custom keeps your individual settings and defaults to 10x for domes and 2x for everything else. Apply to update your colony and see a range report, such as **35 → 70 hexes**.
 
-Balance and limits
-Heaters and scrubbers retain the game's range-based power costs. Doubling their selected radius normally quadruples that component of power consumption. Drone batteries, drone counts, production rates, laser fire rates, and disaster warning time are unchanged. Longer travel distances can still slow drone deliveries.
+The mod also warns about possible conflicts with other loaded range mods. Larger heater and scrubber ranges still use more power.
 
-The dome setting uses the game's shared outside-workplace radius. It also affects station connections, colonist reach checks, and some nearby-site effects. Sensor settings change scanning-boost distance, not sensor law effects. Support struts retain the game's fixed extra protection margin, so their total protected radius is not an exact multiple. Existing safari routes are not shortened automatically when the limit is reduced.
+## Remove
 
-Compatibility
-Prepared against Surviving Mars: Relaunched 1.1.0.403908. No other mod is required. This release candidate has passed source-based automated tests. A complete in-game test across every supported building has not yet been confirmed.
+In a loaded colony, turn off **Enable range changes** and apply. Save, disable the mod, and restart. Existing safari routes remain unchanged.
 
-A warning on colony load and in the range report lists loaded mods whose titles or IDs contain range or radius. These are possible conflicts, not proven ones. Detection cannot find every overlapping mod.
+## Status
 
-Disable other mods that change these same ranges. This includes Dome working range 10x local, Drone control range 2x local, and other dome or drone range extenders. Compatible modded buildings that inherit the supported game classes may also receive the changes, but arbitrary third-party mods are not verified.
+Version 1.1, release candidate 1. Prepared for game version 1.1.0.403908. Automated checks pass. Full in-game testing is pending.
 
-Installation
-Enable Colony Range Control, restart the game, and load your colony. Adjust its values through Mod Options.
-
-Removing the mod
-With your colony loaded, turn off Enable range changes and apply the options. Save the colony, then disable the mod and restart the game. Your existing safari routes remain as drawn.
-
-Version: 1.1, revision 3, release candidate 1
-Author: hawshemi
-
-## Repository
-
-The `mod` directory contains the release source. Copy its contents into your local mod folder. Keep only one copy of this mod ID enabled. Restart after updating.
-
-No license has been selected. No open-source license is granted by this repository.
-
-## Verification
-
-Install Python dependencies from `tests/requirements.txt`. Run `python tests/test_ranges.py mod --game-source "E:/SM/ModTools/Src"`. The tests read your local game source without redistributing it. They do not start the game.
-
-Additional checks: `python tests/test_heat.py --game-source "E:/SM/ModTools/Src"` and `python tests/test_release.py mod --game-source "E:/SM/ModTools/Src"`. Heat and metadata tests extract selected methods from the installed game source. Engine services and the publisher account are simulated. No network requests are made.
+See [full details](mod/Read%20me.txt), [tests](tests), and [publishing instructions](PUBLISHING.md). No license has been selected.
