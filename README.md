@@ -1,5 +1,7 @@
 # Colony Range Control
 
+![Colony Range Control preview](preview.jpg)
+
 Adjust 17 colony ranges from 1x to 10x in **Surviving Mars: Relaunched**. By hawshemi.
 
 Covers domes, stations, drones, scrubbers, heaters, lasers, extractors, sensors, Artificial Suns, support struts, safaris, forestation, Moholes, and Advanced Stirling Generators.
