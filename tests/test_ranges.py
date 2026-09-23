@@ -98,7 +98,7 @@ Cities={{labels={},MapForEach=function(self,scope,class,fn)
  if class=="LocalRangeExtenderObject" then for _,o in ipairs(nodes) do fn(o) end end
 end}}
 OnMsg.PostLoadGame() flush()
-assert(g_Consts.DefaultOutsideWorkplacesRadius==200)
+assert(g_Consts.DefaultOutsideWorkplacesRadius==40)
 assert(hub.work_radius==70 and hub.service_area_max==70 and hub.UIWorkRadius==70 and hub.connected)
 assert(rc.work_radius==40 and rocket.work_radius==70 and ext.work_radius==70)
 assert(scrubber.UIRange==10 and heater.UIRange==10 and heater.refreshed)
@@ -114,6 +114,7 @@ assert(legacyhub.work_radius==70 and legacyhub.service_area_max==70 and legacyrc
 assert(not legacyhub:FindModifier("LocalDroneRange2x","service_area_max"))
 for i=1,3 do OnMsg.PostLoadGame() flush() end
 assert(hub.work_radius==70 and scrubber.UIRange==10 and legacyrc.work_radius==40)
+CurrentModOptions.Preset="Custom"
 CurrentModOptions.Hubs=3 CurrentModOptions.Domes=2 CurrentModOptions.Lasers=1
 OnMsg.ApplyModOptions(CurrentModId) flush()
 assert(hub.work_radius==105 and hub.service_area_max==105 and g_Consts.DefaultOutsideWorkplacesRadius==40)
@@ -131,7 +132,7 @@ assert(const.CommandCenterMaxRadius==50 and const.SensorTowerScanBoostMaxRange==
 assert(g_Classes.SubsurfaceHeaterBase.properties[1].max==15)
 CurrentModOptions={}
 OnMsg.ApplyModOptions(CurrentModId) flush()
-assert(rc.work_radius==40 and g_Consts.DefaultOutsideWorkplacesRadius==200)
+assert(rc.work_radius==40 and g_Consts.DefaultOutsideWorkplacesRadius==40)
 local newhub=node("DroneHubBase",{work_radius=35,service_area_max=35,base_service_area_max=35})
 DefineClass.LocalRangeExtenderObject.GameInit(newhub)
 assert(newhub.work_radius==35) flush() assert(newhub.work_radius==70)
@@ -158,20 +159,21 @@ mohole=node("MoholeMineBase",{})
 stirling=node("AdvancedStirlingGeneratorBase",{opened=false})
 stirling.UpdateHeat=function(self) self:ApplyHeat(self.working and self.opened) end
 nodes[#nodes+1]=forest nodes[#nodes+1]=mohole nodes[#nodes+1]=stirling
-CurrentModOptions={Forestation=3,Mohole=5,Stirling=3,Hubs=3}
+CurrentModOptions={Preset="Custom",Forestation=3,Mohole=5,Stirling=3,Hubs=3,Domes=3}
 OnMsg.PostLoadGame() flush()
 assert(forest.UIRange==75 and forest.plant_hexes==false and forest.range_prev==75)
 assert(const.MoholeMineHeatRadius==40 and const.AdvancedStirlingGeneratorHeatRadius==18)
 assert(mohole.heat_applied and stirling.heat_applied==false)
-for _,preset in ipairs({"Normal","2x","5x","Custom"}) do
+for _,preset in ipairs({"Normal","2x","5x","10x","Custom"}) do
  CurrentModOptions.Preset=preset
  OnMsg.ApplyModOptions(CurrentModId) flush()
- local factor=({Normal=1,["2x"]=2,["5x"]=5,Custom=3})[preset]
+ local factor=({Normal=1,["2x"]=2,["5x"]=5,["10x"]=10,Custom=3})[preset]
  assert(forest.UIRange==25*factor and hub.service_area_max==35*factor)
+ assert(g_Consts.DefaultOutsideWorkplacesRadius==20*factor)
  assert(CurrentModOptions.Hubs==3)
  OnMsg.PostLoadGame() flush() assert(forest.UIRange==25*factor)
 end
-CurrentModOptions.Enabled=false
+CurrentModOptions.Preset="10x" CurrentModOptions.Enabled=false
 OnMsg.ApplyModOptions(CurrentModId) flush()
 assert(forest.UIRange==25 and const.MoholeMineHeatRadius==8 and const.AdvancedStirlingGeneratorHeatRadius==6)
 assert(g_Classes.ForestationPlantBase.properties[1].max==25)

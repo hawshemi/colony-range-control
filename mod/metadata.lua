@@ -5,7 +5,7 @@ return PlaceObj('ModDef', {
 
 Covers domes and stations, Drone Hubs, RC Commanders, rockets, drone extenders, scrubbers, heaters, meteor lasers, extractors, sensors, Artificial Suns, support struts, safari attraction detection and route length, forestation, Mohole heat, and Advanced Stirling heat.
 
-Choose Normal, 2x, 5x, or Custom in Mod Options. Custom preserves individual settings and defaults to 10x for domes and 2x for everything else. Apply to update existing buildings and see their current ranges.
+Choose 2x, 5x, 10x, or Custom in Mod Options. The default preset is 2x. Custom preserves individual settings, with every multiplier defaulting to 2x. Apply to update existing buildings and see their current ranges.
 
 Disable other mods that change the same ranges. Warnings identify possible conflicts by mod name and may not detect every conflict. Heaters and scrubbers retain their range-based power costs. Sensors change scanning reach, not law effects. Struts retain their fixed extra protection margin.
 
@@ -25,8 +25,8 @@ GitHub: https://github.com/hawshemi/colony-range-control
     'author', "hawshemi",
     'version_major', 1,
     'version_minor', 1,
-    'version', 6,
-    'last_changes', "Fixes the editor code filename, adds the GitHub link, and updates the thumbnail.",
+    'version', 7,
+    'last_changes', "Sets all default ranges to 2x and offers 2x, 5x, 10x, and Custom presets.",
     'pdx_id', 160315,
     'lua_revision', 403908,
     'saved_with_revision', 403908,

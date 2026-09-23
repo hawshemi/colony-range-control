@@ -8,7 +8,7 @@ Covers domes, stations, drones, scrubbers, heaters, lasers, extractors, sensors,
 
 Copy the contents of [mod](mod) into your local mod folder. Enable the mod, restart the game, and load your colony. Disable other mods that change the same ranges.
 
-Open **Mod Options** and choose Normal, 2x, 5x, or Custom. Custom keeps your individual settings and defaults to 10x for domes and 2x for everything else. Apply to update your colony and see a range report, such as **35 → 70 hexes**.
+Open **Mod Options** and choose 2x, 5x, 10x, or Custom. The default preset is 2x. Custom keeps your individual settings, with every multiplier defaulting to 2x. Apply to update your colony and see a range report, such as **35 → 70 hexes**.
 
 The mod also warns about possible conflicts with other loaded range mods. Larger heater and scrubber ranges still use more power.
 

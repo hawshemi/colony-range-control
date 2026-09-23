@@ -3,9 +3,9 @@ return {
     PlaceObj('ModItemOptionChoice', {
         'name', "Preset",
         'DisplayName', "Range preset",
-        'Help', "Normal, 2x and 5x override every multiplier. Custom uses your saved individual values. Apply to see actual colony ranges.",
-        'DefaultValue', "Custom",
-        'ChoiceList', {"Normal", "2x", "5x", "Custom"},
+        'Help', "2x, 5x and 10x override every multiplier. Custom uses your saved individual values. Apply to see actual colony ranges.",
+        'DefaultValue', "2x",
+        'ChoiceList', {"2x", "5x", "10x", "Custom"},
     }),
     PlaceObj('ModItemOptionToggle', {
         'name', "Enabled",
@@ -17,7 +17,7 @@ return {
         'name', "Domes",
         'DisplayName', "Dome and station range multiplier",
         'Help', "1 = normal, 2 = double, up to 10. Outside workplaces, stations, and shared colonist reach checks.",
-        'DefaultValue', 10,
+        'DefaultValue', 2,
         'MinValue', 1,
         'MaxValue', 10,
         'StepSize', 1,

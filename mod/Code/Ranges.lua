@@ -1,7 +1,7 @@
 LocalRangeExtenderActive = true
 
 local defaults = {
-    Domes = 10, Hubs = 2, Commanders = 2, Rockets = 2, Extenders = 2,
+    Domes = 2, Hubs = 2, Commanders = 2, Rockets = 2, Extenders = 2,
     Scrubbers = 2, Heaters = 2, Lasers = 2, Extractors = 2, Sensors = 2,
     Forestation = 2, Mohole = 2, Stirling = 2, Suns = 2, Struts = 2, SafariSights = 2, SafariRoutes = 2,
 }
@@ -9,7 +9,8 @@ local defaults = {
 local function Factor(key)
     local options = CurrentModOptions or empty_table
     if options.Enabled == false then return 1 end
-    local preset = ({Normal = 1, ["2x"] = 2, ["5x"] = 5})[options.Preset]
+    -- Keep the retired Normal preset working for saved settings.
+    local preset = ({Normal = 1, ["2x"] = 2, ["5x"] = 5, ["10x"] = 10})[options.Preset or "2x"]
     return Clamp(preset or tonumber(options[key]) or defaults[key], 1, 10)
 end
 

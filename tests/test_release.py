@@ -38,6 +38,10 @@ options = l.execute((root/'items.lua').read_text(encoding='utf-8'))
 assert len(options) == 20
 names = [item['name'] for _,item in options.items() if item['class'].startswith('ModItemOption')]
 assert len(set(names)) == 19
+by_name = {item['name']: item for _, item in options.items() if item['class'].startswith('ModItemOption')}
+assert by_name['Preset']['DefaultValue'] == '2x'
+assert list(by_name['Preset']['ChoiceList'].values()) == ['2x', '5x', '10x', 'Custom']
+assert all(item['DefaultValue'] == 2 for _, item in options.items() if item['class'] == 'ModItemOptionNumber')
 item_source = (args.game_source/'CommonLua/Modding/ModItem.lua').read_text(encoding='utf-8')
 l.execute('ModItemCode = {}')
 l.execute(re.search(r'^function ModItemCode:GetCodeFileName\(.*?^end', item_source, re.M|re.S)[0])
