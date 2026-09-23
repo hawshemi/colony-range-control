@@ -16,8 +16,6 @@ The mod also warns about possible conflicts with other loaded range mods. Larger
 
 In a loaded colony, turn off **Enable range changes** and apply. Save, disable the mod, and restart. Existing safari routes remain unchanged.
 
-## Status
+For Surviving Mars: Relaunched 1.1.0.403908.
 
-Version 1.1, release candidate 1. Prepared for game version 1.1.0.403908. Automated checks pass. Full in-game testing is pending.
-
-See [full details](mod/Read%20me.txt), [tests](tests), and [publishing instructions](PUBLISHING.md). No license has been selected.
+Licensed under the [MIT license](LICENSE).
