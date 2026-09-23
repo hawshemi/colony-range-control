@@ -12,6 +12,7 @@ Keep changes small and follow the existing Lua style. Add dependencies only when
 - Refresh affected caches, connections, heat maps, and range displays when changing gameplay ranges.
 - Preserve existing power-cost scaling and other gameplay effects unless the request changes them.
 - Before changing game hooks, check the installed game source using a locally supplied path.
+- Set each code item's `name` to its Lua filename stem. The editor derives `Code/<name>.lua` on save, so `CodeFileName` alone is insufficient.
 
 ## Validation
 
@@ -30,7 +31,9 @@ Set `GAME_SOURCE` locally to the game source directory. Use the first test for r
 - Keep option descriptions, metadata, and player instructions consistent with behavior. Include the MIT license in release packages.
 - Commit only project code, artwork, documentation, and tests. Keep game source, saves, logs, credentials, and local runtime binaries outside the repository.
 - Keep personal filesystem paths out of tracked files, examples, and commit messages. Use environment variables or generic placeholders.
-- When asked to install locally, back up the existing mod before copying `mod/` into the installed folder. Preserve the mod ID and avoid duplicate installations.
+- When asked to install locally, back up the existing mod first. Preserve installed publishing fields, including `pdx_id` and `pdx_version`, and avoid duplicate installations. Close the editor without saving and reopen it after external edits to prevent stale data from overwriting them.
+- Preserve the existing Paradox listing ID `160315` when preparing updates. Keep the GitHub URL in both the description and `external_links`.
+- Use a 1280 × 720 JPG thumbnail at about 90% quality, below 2 MiB. The marketplace crops images to 16:9. Keep text inside safe margins and synchronize the root and packaged thumbnails.
 - Publish to Paradox Mods only when explicitly requested. A source zip is not the game's packed upload archive.
 
 ## Git and communication
