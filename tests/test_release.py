@@ -13,7 +13,7 @@ root = args.mod
 l = LuaRuntime(unpack_returned_tuples=True)
 l.execute('''
 function PlaceObj(class, props)
-    local result={}
+    local result={class=class}
     for i=1,#props,2 do result[props[i]]=props[i+1] end
     return result
 end
@@ -36,8 +36,19 @@ for _, relative in metadata['code'].items():
     assert (root/relative).is_file()
 options = l.execute((root/'items.lua').read_text(encoding='utf-8'))
 assert len(options) == 20
-names = [item['name'] for _,item in options.items() if item['name']]
+names = [item['name'] for _,item in options.items() if item['class'].startswith('ModItemOption')]
 assert len(set(names)) == 19
+item_source = (args.game_source/'CommonLua/Modding/ModItem.lua').read_text(encoding='utf-8')
+l.execute('ModItemCode = {}')
+l.execute(re.search(r'^function ModItemCode:GetCodeFileName\(.*?^end', item_source, re.M|re.S)[0])
+for _, item in options.items():
+    if item['class'] == 'ModItemCode':
+        # The editor rebuilds filenames from the item name when saving.
+        item['name'] = item['name'] or 'Script'
+        relative = l.globals().ModItemCode.GetCodeFileName(item)
+        assert relative == item['CodeFileName'], f'Editor saves {relative}, not {item["CodeFileName"]}'
+        assert (root/relative).is_file()
+        assert relative in list(metadata['code'].values())
 source = (args.game_source/'CommonLua/Libs/Paradox/ParadoxMods.lua').read_text(encoding='utf-8')
 preflight = re.search(r'^function PDX_PrepareForUpload\(.*?^end', source, re.M|re.S)[0]
 l.execute(preflight)

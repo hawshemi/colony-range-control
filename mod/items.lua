@@ -1,5 +1,5 @@
 return {
-    PlaceObj('ModItemCode', { 'CodeFileName', "Code/Ranges.lua" }),
+    PlaceObj('ModItemCode', { 'name', "Ranges", 'CodeFileName', "Code/Ranges.lua" }),
     PlaceObj('ModItemOptionChoice', {
         'name', "Preset",
         'DisplayName', "Range preset",
