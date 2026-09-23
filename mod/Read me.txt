@@ -1,17 +1,10 @@
 Adjust 17 colony ranges from 1x to 10x in Surviving Mars: Relaunched.
 
-Covers domes and stations, Drone Hubs, RC Commanders, rockets, drone extenders, scrubbers, heaters, meteor lasers, extractors, sensors, Artificial Suns, support struts, safari attraction detection and route length, forestation, Mohole heat, and Advanced Stirling heat.
+Features
+2x, 5x, 10x, and Custom presets. Individual range controls, range reports, and possible conflict warnings.
 
-Choose 2x, 5x, 10x, or Custom in Mod Options. The default preset is 2x. Custom preserves individual settings, with every multiplier defaulting to 2x. Apply to update existing buildings and see their current ranges.
+Use
+Subscribe, enable the mod, and restart. Choose a preset in Mod Options and apply. The default is 2x. Disable other mods that change the same ranges. Larger heater and scrubber ranges still use more power.
 
-Disable other mods that change the same ranges. Warnings identify possible conflicts by mod name and may not detect every conflict. Heaters and scrubbers retain their range-based power costs. Sensors change scanning reach, not law effects. Struts retain their fixed extra protection margin.
-
-To install, copy this folder into your local Mods directory, enable the mod, and restart. Keep only one copy of this mod enabled.
-
-To remove, turn off Enable range changes in a loaded colony and apply. Save, disable the mod, and restart. Existing safari routes remain unchanged.
-
-For Surviving Mars: Relaunched 1.1.0.403908.
-Author: hawshemi
-License: MIT
-
-GitHub: https://github.com/hawshemi/colony-range-control
+Remove
+In a loaded colony, turn off Enable range changes and apply. Save, disable the mod, and restart. Existing safari routes remain unchanged.

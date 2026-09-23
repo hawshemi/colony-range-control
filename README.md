@@ -14,7 +14,7 @@ For manual installation, copy the contents of [mod](mod) into your local mod fol
 
 Choose **2x** (default), **5x**, **10x**, or **Custom** in Mod Options. Custom lets you adjust each range from 1x to 10x. Apply to update your colony and view the range report.
 
-<img src="mod/options.png" alt="Mod options showing the 2x preset and individual range sliders" width="600">
+![In-game options arranged in two columns](mod/options.jpg)
 
 Larger heater and scrubber ranges still use more power. The mod warns about possible conflicts with other range mods.
 
